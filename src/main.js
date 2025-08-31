@@ -35,6 +35,20 @@ const resizeCanvas = () => {
 };
 resizeCanvas();
 
+//Resize with delay to lower number of calls
+const debounce = (func, delay = 100) => {
+    let timeout;
+    return function(...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+            func.apply(this, args)
+        }, delay);
+    }
+};
+const debouncedResize = debounce(resizeCanvas, 50);
+window.addEventListener("resize", debouncedResize);
+
+//Drawing
 const draw = (e) => {
     if (!isDrawing) return;
     setContextProperties();
@@ -63,11 +77,13 @@ brushSizeInput.addEventListener("input", (e) => {
     brushSizeValue.textContent = e.target.value;
 });
 
+//Clear Canvas
 clearButton.addEventListener("click", () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     saveHistory();
 });
 
+//Disable undo and redo buttons if unavailable
 const updateButtons = () => {
     undoButton.disabled = historyIndex <= 0;
     redoButton.disabled = historyIndex >= history.length - 1;
