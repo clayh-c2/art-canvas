@@ -48,3 +48,7 @@ canvas.addEventListener("mouseleave", () => (isDrawing = false));
 brushSizeInput.addEventListener("input", (e) => {
     brushSizeValue.textContent = e.target.value;
 })
+
+clearButton.addEventListener("click", () => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+})
