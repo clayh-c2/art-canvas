@@ -26,7 +26,10 @@
                 </div>
                 <div class="tool">
                     <label for="brushSize">Brush Size</label>
-                    <input type="range" id="brushSize" min="1" max="100" value="7" />
+                    <div class="brush-slider">
+                        <input type="range" id="brushSize" min="1" max="100" value="7" />
+                        <span id="brushSizeValue">7</span>
+                    </div>
                 </div>
             </div>
 
@@ -43,7 +46,7 @@
     </div>
 
     <canvas id="drawingCanvas">
-        
+
     </canvas>
 
     <script src="main.js"></script>

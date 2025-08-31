@@ -5,6 +5,7 @@
     --text-color: #2c3e50;
     --surface-color: #ffffff;
     --border-color: #e1e5ea;
+    --primary-color: #6a5af9;
 
     --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     --transition-speed: 0.3s;
@@ -73,6 +74,7 @@ h1 {
     font-weight: 500;
 }
 
+/*Color button*/
 input[type="color"] {
     -webkit-appearance: none;
     appearance: none;
@@ -93,4 +95,53 @@ input[type="color"]:hover {
 
 input[type="color"]::-webkit-color-swatch-wrapper {
     padding: 0;
+}
+
+/*Brush button*/
+.brush-slider {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#brushSizeValue {
+    font-weight: 600;
+    font-size: 16px;
+    width: 45px;
+    height: 45px;
+    background-color: var(--bg-color);
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--border-color);
+    transition: background-color var(--transition-speed),
+        border-color var(--transition-speed);
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 150px;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    background: var(--border-color);
+    height: 6px;
+    border-radius: 3px;
+    transition: background-color var(--transition-speed);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    margin-top: -7px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    border: 3px solid var(--surface-color);
+    box-shadow: 0 0 10px var(--primary-color);
+    transition: background-color var(--transition-speed);
 }
