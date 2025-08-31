@@ -44,3 +44,7 @@ canvas.addEventListener("mousedown", (e) => {
 canvas.addEventListener("mousemove", draw);
 canvas.addEventListener("mouseup", () => (isDrawing = false));
 canvas.addEventListener("mouseleave", () => (isDrawing = false));
+
+brushSizeInput.addEventListener("input", (e) => {
+    brushSizeValue.textContent = e.target.value;
+})
