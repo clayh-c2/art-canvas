@@ -6,6 +6,9 @@
     --surface-color: #ffffff;
     --border-color: #e1e5ea;
     --primary-color: #6a5af9;
+    --primay-glow: rgba(106, 90, 249, 0.4);
+    --danger-color: #e74c3c;
+    --danger-glow: rgba(231, 76, 60, 0.4);
 
     --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     --transition-speed: 0.3s;
@@ -97,7 +100,7 @@ input[type="color"]::-webkit-color-swatch-wrapper {
     padding: 0;
 }
 
-/*Brush button*/
+/*Brush slider*/
 .brush-slider {
     display: flex;
     align-items: center;
@@ -142,6 +145,41 @@ input[type="range"]::-webkit-slider-thumb {
     border-radius: 50%;
     background: var(--primary-color);
     border: 3px solid var(--surface-color);
-    box-shadow: 0 0 10px var(--primary-color);
+    box-shadow: 0 0 10px var(--primary-glow);
     transition: background-color var(--transition-speed);
+}
+
+/*Button*/
+.btn.btn-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 18px;
+    border: 1px solid var(--border-color);
+    background-color: var(--surface-color);
+    color: var(--text-color);
+    display: grid;
+    place-items: center;
+    transition: all 0.2s;
+}
+
+.btn.btn-icon:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(2, 1 ,1, 0.1);
+}
+
+#undoBtn:hover {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 0 15px var(--primary-glow);
+}
+
+.btn.btn-icon.btn-danger {
+    color: var(--danger-color);
+}
+
+.btn.btn-icon.btn-danger:hover {
+    background-color: var(--danger-color);
+    color: white;
+    box-shadow: 0 0 15px var(--danger-glow);
 }
