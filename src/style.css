@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
+:root {
+    --bg-color: #f4f7f8;
+    --text-color: #2c3e50;
+    --surface-color: #ffffff;
+    --border-color: #e1e5ea;
+
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    --transition-speed: 0.3s;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -12,6 +22,41 @@ body {
     min-height: 100vh;
     margin: 0;
     padding: 20px;
-    background-color: #f4f7f8;
-    color: #2c3e50;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+}
+
+h1 {
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.tool-bar {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.tool-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: var(--surface-color);
+    padding: 10px 20px;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    transition: background-color var(--transition-speed),
+        border-color var(--transition-speed);
 }
