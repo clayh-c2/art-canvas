@@ -39,7 +39,7 @@ h1 {
     margin-bottom: 20px;
 }
 
-.tool-bar {
+.toolbar {
     display: flex;
     gap: 15px;
     justify-content: center;
@@ -59,4 +59,38 @@ h1 {
     border: 1px solid var(--border-color);
     transition: background-color var(--transition-speed),
         border-color var(--transition-speed);
+}
+
+.tool {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+}
+
+.tool label {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+input[type="color"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 45px;
+    height: 45px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    background-color: transparent;
+    border: 3px solid var(--border-color);
+    border-radius: 50%;
+    transition: border-color var(--transition-speed), transform 0.2s;
+}
+
+input[type="color"]:hover {
+    transform: scale(1.1);
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
 }
