@@ -183,3 +183,15 @@ input[type="range"]::-webkit-slider-thumb {
     color: white;
     box-shadow: 0 0 15px var(--danger-glow);
 }
+
+/*Canvas*/
+#drawingCanvas {
+    background-color: var(--surface-color);
+    cursor: crosshair;
+    width: 95vw;
+    flex-grow: 1;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    transition: background-color var(--transition-speed), 
+        box-shadow var(--transition-speed);
+}
